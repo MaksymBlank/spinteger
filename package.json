@@ -1,0 +1,33 @@
+{
+  "name": "spinteger",
+  "version": "1.0.0",
+  "description": "Animated spinning numbers",
+  "main": "dist/spinteger.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaksymBlank/spinteger.git"
+  },
+  "keywords": [
+    "spinteger",
+    "animation",
+    "spinning",
+    "rolling",
+    "numbers",
+    "integer"
+  ],
+  "author": {
+    "name": "Maksym Blank",
+    "email": "blank.maksym@gmail.com",
+    "url": "http://maksymblank.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaksymBlank/spinteger/issues"
+  },
+  "homepage": "https://github.com/MaksymBlank/spinteger#readme",
+  "dependencies": {
+  }
+}
