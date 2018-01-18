@@ -537,7 +537,7 @@ function spinteger(element, options){
 }
 
 if (typeof exports !== "undefined") {
-    exports.spinteger = spinteger
+    module.exports = spinteger;
 }
 else {
     window.spinteger = spinteger

@@ -1,8 +1,8 @@
 {
   "name": "spinteger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Animated spinning numbers",
-  "main": "dist/spinteger.min.js",
+  "main": "dist/spinteger.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
