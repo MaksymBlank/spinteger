@@ -1,0 +1,26 @@
+{
+  "name": "spinteger",
+  "description": "Animated spinning numbers",
+  "main": "dist/spinteger.js",
+  "authors": [
+    "Maksym Blank"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "spinteger",
+    "animation",
+    "spinning",
+    "rolling",
+    "numbers",
+    "integer"
+  ],
+  "homepage": "https://github.com/MaksymBlank/spinteger",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "website"
+  ]
+}

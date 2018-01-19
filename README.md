@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img alt="spinteger example" src="https://im5.ezgif.com/tmp/ezgif-5-b93daf575b.gif" width="300px">
+  <img alt="spinteger example" src="http://spinteger.io/images/spinteger_logo.gif" width="300px">
 </p>
 
 ## Installation
