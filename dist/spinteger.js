@@ -136,9 +136,11 @@ function Spinteger(element, options){
     if(!element){
         throw new Error('Element is not defined');
     }
-    if(!element.innerText){
-        throw new Error('Element\'s content is not defined');
-    }
+    // Element puts 0 in innerText if innerText isn't defined
+    
+    // if(!element.innerText || isNaN(element.innerText)){
+    //     throw new Error('Element\'s content is not defined');
+    // }
     var el = +element.innerText;
     if(typeof el !== 'number' || isNaN(el)){
         throw new Error('Element\'s content is not a number');
@@ -187,7 +189,7 @@ function Spinteger(element, options){
         // Remove Before and After span elements
         removeBeforeAndAfter(element);
 
-        if(!newValue){
+        if(!newValue && isNaN(newValue)){
             throw new Error('New Value is not defined');
         }
 
@@ -386,10 +388,8 @@ function Spinteger(element, options){
     function removeSeparator(el){
         el = Array.prototype.slice.call(el.children, '');
         for(var i=el.length-1;i>=0;i--){
-            if(SEPARATOR){
-                if(el[i].classList.contains('spinteger-value-sep')){
-                    el[i].parentNode.removeChild(el[i]);
-                }
+            if(el[i].classList.contains('spinteger-value-sep')){
+                el[i].parentNode.removeChild(el[i]);
             }
         }
     }
