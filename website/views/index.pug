@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="keywords" content="number, animation, digit, js, javascript, library, scrolling, spinning, rolling, animated")
+        meta(name="description" content="Spinteger is a JavaScript library for creating animation of changing digits. It is free and open source and was developed by Maksym Blank (@maksymblank)")
+        link(href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat:300,400,500|Supermercado+One|Lato:300,400,700" rel="stylesheet")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet", href="css/main.css")
+        link(rel="icon" href="images/favicon.ico")
+        script(src="http://spinteger.maksymblank.com/dist/spinteger.min.js")
+        script(src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
+        title Spinteger.io
+        // Global site tag (gtag.js) - Google Analytics
+        script(async src="https://www.googletagmanager.com/gtag/js?id=UA-111678152-2")
+        script
+            | window.dataLayer = window.dataLayer || [];
+            | function gtag(){dataLayer.push(arguments);}
+            | gtag('js', new Date());
+            | gtag('config', 'UA-111678152-2');
+    body
+        header.header
+            .container
+                .logo
+                    a(href="/").logo-link
+                        img(src="images/logo.png")
+                a(href="#").nav-button
+                    i(aria-hidden="true").fa.fa-bars.fa-2x
+                nav.nav
+                    ul.nav-list
+                        li.nav-item
+                            a(href="#").link-install Docs
+                        li.nav-item
+                            a(href="#").link-docs Configuration
+                        li.nav-item
+                            a(href="https://github.com/MaksymBlank/spinteger")
+                                i(aria-hidden="true").fa.fa-github.nav-github
+        section.hero
+            .hero-bg
+            .container
+                .desc
+                    h1.desc-title Spinteger.io
+                    .desc-ex
+                        .desc-template
+                            .desc-template-top
+                            .desc-template-name
+                                | Available balance 
+                            span#hero-number.desc-template-number 389283
+                        .desc-info
+                            .desc-text  Animated spinning numbers
+                            .desc-install
+                                .desc-code $ npm install spinteger --save
+        section.examples
+            .container
+                h3.h3-title Spinteger makes changing numbers easy and elegant.
+                .examples-comparing
+                    .examples-comparing-normal
+                        .editor-name Normal
+                        .editor
+                            span.js_const let
+                            span.js_name  num
+                            |  = 
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | );
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_name innerText 
+                            | = 
+                            span#examples-comparing-normal-prev.js_func 0
+                            | ;
+                        .examples-comparing-bottom
+                            .show
+                                span#examples-comparing-normal 123456
+                            .button-block
+                                button#examples-comparing-normal-button.button-run Run
+                    .examples-comparing-spinteger
+                        .editor-name Spinteger
+                        .editor
+                            span.js_const let&nbsp;
+                            span.js_name num&nbsp;
+                            | =&nbsp;
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | );
+                            br
+                            span.js_name num&nbsp;
+                            | =&nbsp;
+                            span.js_func spinteger
+                            | (
+                            span.js_name num
+                            | );
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span#examples-comparing-spinteger-prev.js_func 0
+                            | );
+                        .examples-comparing-bottom
+                            .show
+                                span#examples-comparing-spinteger 12389239
+                            .button-block
+                                button#examples-comparing-spinteger-button.button-run Run
+        section.install
+            .container
+                h3.h3-title Installation
+                p.text-center The recommended method of installing is compined NPM with the tool like 
+                    a(href="http://webpack.js.org").no-decoration <code>Webpack</code>
+                    |.
+                .row.text-center
+                    .left
+                        h4 NPM
+                    .right
+                        pre.code.code-npm
+                            span npm&nbsp;i&nbsp;spinteger&nbsp;--save
+                        p.text-left Then simply import it into your application
+                        pre.editor.editor-install.m-0
+                            span.js_pink import&nbsp;
+                            span.js_name spinteger&nbsp;
+                            span.js_pink from&nbsp;
+                            span.js_str 'spinteger'
+                p.text-center The simplest possible usage is just including the javascript file on your page.
+                .row
+                    .left
+                        h4 CDN
+                    .right
+                        pre.code.m-0
+                            span 
+                                | &lt;
+                                span.js_lightconst script 
+                                span.js_const src
+                                | =
+                                span.js_str "http://spinteger.maksymblank.com/dist/spinteger.min.js"
+                                | &gt;&lt;/
+                                span.js_lightconst script
+                                | &gt;
+        section.docs
+            .container
+                h3.h3-title Configuration
+                p.docs-sub You should set <code>element</code> as the first parameter in <code>spinteger</code> function.
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-element-number 1873656
+                    .right
+                        p
+                            code element
+                            |  in 
+                            code spinteger(element)
+                        p
+                            strong Type: 
+                            code HTMLelement &gt; SPAN
+                        p
+                            strong Required: 
+                            code.code-blue true
+                        p
+                            strong Description:
+                        p
+                            | HTMLElement, that you want to be animated. The element should be passed as the first parameter of the function <code>spinteger</code>. The element must be <code>span</code> element and has only digits inside it.
+                        .desc-button-block
+                            strong Example
+                            button#conf-element-run.button-run Run
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ));
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382
+                            | );
+                            span.js_comment  // any number
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-fontsize-number 1873656
+                    .right
+                        p
+                            code fontSize
+                        p
+                            strong Type: 
+                            code number
+                        p
+                            strong Required: 
+                            code.code-blue false
+                        p
+                            strong Default: 
+                            code inherit
+                            |  or 
+                            code 16px
+                        p
+                            strong Value: 
+                            code 6
+                            |  to 
+                            code 100
+                        p
+                            strong Description:
+                        p
+                            | Font size of the current element.
+                        .desc-button-block
+                            strong Example
+                            button#conf-fontsize-run.button-run Run
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ),{
+                            br
+                            span.js_name    fontSize:
+                            span.js_func 40
+                            br
+                            | });
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382
+                            | );
+                            span.js_comment  // any number
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-separator-number 1873656
+                    .right
+                        p
+                            code separator
+                        p
+                            strong Type: 
+                            code string
+                        p
+                            strong Required: 
+                            code.code-blue false
+                        p
+                            strong Default: 
+                            code ""
+                            | (empty string)
+                        p
+                            strong Value: 
+                            | length should be from
+                            code 1
+                            |  to 
+                            code 3
+                        p
+                            strong Description:
+                        p
+                            | The separator will be inserted after every third digit. If you want number to be divided by extra space, put <code>#</code> as a separator.
+                        .desc-button-block
+                            strong Example
+                            button#conf-separator-run.button-run Run
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ),{
+                            br
+                            span.js_name    separator:
+                            span.js_str '#'
+                            | ,
+                            br
+                            span.js_name    fontSize:
+                            span.js_func  24
+                            br
+                            | });
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382
+                            | );
+                            span.js_comment  // any number
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-tofixed-number 1873656
+                    .right
+                        p
+                            code tofixed
+                        p
+                            strong Type: 
+                            code number
+                        p
+                            strong Required: 
+                            code.code-blue false
+                        p
+                            strong Default: 
+                            code 0
+                        p
+                            strong Value: 
+                            code 0
+                            |  to 
+                            code 5
+                        p
+                            strong Description:
+                        p
+                            | The number of digits to appear after the decimal point.
+                        .desc-button-block
+                            strong Example
+                            button#conf-tofixed-run.button-run Run
+                        
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ),{
+                            br
+                            span.js_name    separator:
+                            span.js_str ','
+                            | ,
+                            br
+                            span.js_name    fontSize:
+                            span.js_func  24
+                            | ,
+                            br
+                            span.js_name    tofixed:
+                            span.js_func  2
+                            br
+                            | });
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382.32
+                            | );
+                            span.js_comment  // any number
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-step-number 1873656
+                    .right
+                        p
+                            code step
+                        p
+                            strong Type: 
+                            code number
+                        p
+                            strong Required: 
+                            code.code-blue false
+                        p
+                            strong Default: 
+                            code 1
+                        p
+                            strong Value: 
+                            code 1
+                            |  to 
+                            code 5
+                        p
+                            strong Description:
+                        p
+                            | Step - the number of pixels that pass in one interval. Font size <mark>must</mark> be able to divide by <code>step</code>. The higher step, the faster your animation goes.
+                        .desc-button-block
+                            strong Example
+                            button#conf-step-run.button-run Run
+                        
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ),{
+                            br
+                            span.js_name    separator:
+                            span.js_str '#'
+                            | ,
+                            br
+                            span.js_name    fontSize:
+                            span.js_func  30
+                            | ,
+                            br
+                            span.js_name    tofixed:
+                            span.js_func  2
+                            | ,
+                            br
+                            span.js_name    step:
+                            span.js_func  5
+                            br
+                            | });
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382.32
+                            | );
+                            span.js_comment  // any number
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-speed-number 1873656
+                    .right
+                        p
+                            code speed
+                        p
+                            strong Type: 
+                            code number
+                        p
+                            strong Required: 
+                            code.code-blue false
+                        p
+                            strong Default: 
+                            code 50
+                        p
+                            strong Value: 
+                            code 50
+                            |  to 
+                            code 2000
+                        p
+                            strong Description:
+                        p
+                            | Speed - interval time for your animation. The higher speed, the faster your animation goes.
+                        .desc-button-block
+                            strong Example
+                            button#conf-speed-run.button-run Run
+                        
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ),{
+                            br
+                            span.js_name    separator:
+                            span.js_str '#'
+                            | ,
+                            br
+                            span.js_name    fontSize:
+                            span.js_func  30
+                            | ,
+                            br
+                            span.js_name    tofixed:
+                            span.js_func  2
+                            | ,
+                            br
+                            span.js_name    speed:
+                            span.js_func  500
+                            br
+                            | });
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382.32
+                            | );
+                            span.js_comment  // any number
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-before-number 1873656
+                    .right
+                        p
+                            code before
+                        p
+                            strong Type: 
+                            code string
+                        p
+                            strong Required: 
+                            code.code-blue false
+                        p
+                            strong Default: 
+                            code ''
+                            | (empty string)
+                        p
+                            strong Value: 
+                            | length should be from
+                            code 0
+                            |  to 
+                            code 5
+                        p
+                            strong Description:
+                        p
+                            | Content, that will be insered before number.
+                        .desc-button-block
+                            strong Example
+                            button#conf-before-run.button-run Run
+                        
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ),{
+                            br
+                            span.js_name    separator:
+                            span.js_str '#'
+                            | ,
+                            br
+                            span.js_name    fontSize:
+                            span.js_func  30
+                            | ,
+                            br
+                            span.js_name    tofixed:
+                            span.js_func  2
+                            | ,
+                            br
+                            span.js_name    step:
+                            span.js_func  2
+                            | ,
+                            br
+                            span.js_name    before:
+                            span.js_str  '$'
+                            br
+                            | });
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382.32
+                            | );
+                            span.js_comment  // any number
+                .row
+                    .left.left-conf
+                        .left-display
+                            span#conf-after-number 1873656
+                    .right
+                        p
+                            code after
+                        p
+                            strong Type: 
+                            code string
+                        p
+                            strong Required: 
+                            code.code-blue false
+                        p
+                            strong Default: 
+                            code ''
+                            | (empty string)
+                        p
+                            strong Value: 
+                            | length should be from
+                            code 0
+                            |  to 
+                            code 5
+                        p
+                            strong Description:
+                        p
+                            | Content, that will be insered after number.
+                        .desc-button-block
+                            strong Example
+                            button#conf-after-run.button-run Run
+                        
+                        pre.editor.editor-html
+                            | &lt;
+                            span.js_const span 
+                            span.js_name id
+                            | =
+                            span.js_str "number"
+                            | &gt;
+                            span.js_white 1873656
+                            | &lt;
+                            span.js_const /span
+                            | &gt;
+                        pre.editor.editor-js
+                            span.js_const var
+                            span.js_name  num
+                            |  = 
+                            span.js_func spinteger
+                            | (
+                            span.js_name document
+                            | .
+                            span.js_func querySelector
+                            | (
+                            span.js_str '#number'
+                            | ),{
+                            br
+                            span.js_name    separator:
+                            span.js_str '#'
+                            | ,
+                            br
+                            span.js_name    fontSize:
+                            span.js_func  30
+                            | ,
+                            br
+                            span.js_name    tofixed:
+                            span.js_func  2
+                            | ,
+                            br
+                            span.js_name    step:
+                            span.js_func  2
+                            | ,
+                            br
+                            span.js_name    after:
+                            span.js_str  '$'
+                            br
+                            | });
+                            br
+                            br
+                            span.js_name num
+                            | .
+                            span.js_func val
+                            | (
+                            span.js_func 3892382.32
+                            | );
+                            span.js_comment  // any number
+        footer.footer
+            .container
+                p.footer-text Created with
+                    i(aria-hidden style="padding-left: 5px; padding-right: 5px; color: red").fa.fa-heart
+                    | by 
+                    a(href="http://maksymblank.com") Maksym Blank
+                    | . All Rights Reserved.
+        script(src="js/main.js")
