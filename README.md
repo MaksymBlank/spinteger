@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="http://spinteger.io">
-    <img src="http://spinteger.io/images/logo.png" alt="logo">
+  <a href="https://spinteger.maksymblank.com">
+    <img src="https://spinteger.maksymblank.com/images/logo.png" alt="logo">
   </a>
 </p>
 
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img alt="spinteger example" src="http://spinteger.io/images/spinteger_logo.gif" width="300px">
+  <img alt="spinteger example" src="https://spinteger.maksymblank.com/images/spinteger_logo.gif" width="300px">
 </p>
 
 ## Installation
@@ -25,7 +25,7 @@ $ bower install spinteger --save
 or use CDN
 
 ```
-<script src="http://spinteger.io/dist/spinteger.min.js"></script>
+<script src="https://spinteger.maksymblank.com/dist/spinteger.min.js"></script>
 ```
 
 ## Usage
@@ -64,6 +64,6 @@ num.val(3892382);
 
 ## Documentation
 
-- [Installation](http://spinteger.io/#install)
+- [Installation](https://spinteger.maksymblank.com/#install)
 
-- [Configuration](http://spinteger.io/#conf)
+- [Configuration](https://spinteger.maksymblank.com/#conf)

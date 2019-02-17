@@ -21,7 +21,7 @@
   "author": {
     "name": "Maksym Blank",
     "email": "blank.maksym@gmail.com",
-    "url": "http://maksymblank.com"
+    "url": "https://maksymblank.com"
   },
   "license": "MIT",
   "bugs": {
@@ -29,5 +29,16 @@
   },
   "homepage": "https://github.com/MaksymBlank/spinteger#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "browser-sync": "^2.26.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "gulp": "^3.9.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "rimraf": "^2.6.3",
+    "url": "^0.11.0"
   }
 }
